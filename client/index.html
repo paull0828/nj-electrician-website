@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NJ Electrician - Sales & Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        transition: background-color 0.3s ease;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-md transition-all duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            src="../image.png"
+            alt="NJ Electrician Logo"
+            class="w-10 h-10 object-contain"
+          />
+          <h1 class="text-xl font-extrabold text-blue-700">NJ Electrician</h1>
+        </div>
+        <nav class="space-x-4 text-sm hidden md:block font-medium">
+          <a href="#services" class="hover:text-blue-600">Services</a>
+          <a href="#reels" class="hover:text-blue-600">Our Work</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+          <a href="#booking" class="hover:text-blue-600">Book Service</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Modal -->
+    <div
+      id="confirmationModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-sm w-full text-center"
+      >
+        <h3 class="text-xl font-bold text-green-600 mb-4">
+          Booking Confirmed!
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          We received your request. We'll contact you soon!
+        </p>
+        <button
+          onclick="closeModal()"
+          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-28 bg-gradient-to-r from-blue-100 to-purple-200 py-20 px-4"
+    >
+      <div
+        class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-8"
+      >
+        <!-- Left Content -->
+        <div class="text-center md:text-left flex-1" data-aos="fade-right">
+          <h2 class="text-4xl font-extrabold text-blue-900 mb-4">
+            Expert in AC & Electrical Services
+          </h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Fast, Affordable & Reliable Service in Your Area
+          </p>
+          <a
+            href="#booking"
+            class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+          >
+            Book AC Service
+          </a>
+        </div>
+
+        <!-- Right Image -->
+        <div class="flex-1" data-aos="fade-left">
+          <img
+            src="../WhatsApp Image 2025-05-30 at 14.48.21_ca6344d7.jpg"
+            alt="NJ Electrician Banner"
+            class="w-full max-w-md mx-auto md:mx-0 rounded-3xl shadow-xl animate-fadeInUp"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section
+      id="services"
+      class="py-16 px-4 bg-gradient-to-br from-white to-blue-50"
+    >
+      <h3
+        class="text-3xl font-bold mb-12 text-center text-gray-800"
+        data-aos="fade-up"
+      >
+        Our Services
+      </h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Individual cards -->
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+        >
+          <h4 class="text-lg font-semibold mb-2">❄️ AC Services</h4>
+          <p class="text-gray-600">
+            AC installation, repair, gas refill & servicing
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h4 class="text-lg font-semibold mb-2">
+            🔌 Inverter Sales & Service
+          </h4>
+          <p class="text-gray-600">
+            Reliable power solutions with expert installation
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h4 class="text-lg font-semibold mb-2">📷 CCTV Installation</h4>
+          <p class="text-gray-600">
+            Secure your home or office with modern CCTV systems
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+        >
+          <h4 class="text-lg font-semibold mb-2">📺 TV Repair</h4>
+          <p class="text-gray-600">
+            LED, LCD TV diagnostics and repair services
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h4 class="text-lg font-semibold mb-2">🚰 Water Purifiers</h4>
+          <p class="text-gray-600">
+            Sales & service of RO & UV water purification systems
+          </p>
+        </div>
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h4 class="text-lg font-semibold mb-2">💡 Electrical Wiring</h4>
+          <p class="text-gray-600">
+            Home & commercial wiring with expert supervision
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reels Section -->
+    <section
+      id="reels"
+      class="py-16 bg-gradient-to-tr from-purple-100 to-pink-100 px-4"
+    >
+      <h3 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">
+        OUR WORK
+      </h3>
+
+      <!-- Image Grid -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        data-aos="zoom-in"
+      >
+        <!-- Example image cards (add your real images here) -->
+        <img
+          src="https://www.instagram.com/p/DBjX3JZtpAN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          alt="Work 1"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 2"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 3"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 4"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 5"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 6"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 7"
+          class="rounded-xl shadow-md"
+        />
+        <img
+          src="https://via.placeholder.com/300"
+          alt="Work 8"
+          class="rounded-xl shadow-md"
+        />
+      </div>
+
+      <!-- Instagram Button -->
+      <div class="text-center mt-10" data-aos="fade-up">
+        <a
+          href="https://www.instagram.com/nj_electronics_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-full shadow transition"
+        >
+          For More, Visit Our Instagram
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-16 bg-white px-4 text-center max-w-4xl mx-auto"
+      data-aos="fade-up"
+    >
+      <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+      <p class="mb-4 text-lg font-semibold text-gray-700">
+        We provide expert electrical & AC services across multiple locations:
+      </p>
+      <p class="mb-6 text-gray-600 italic">
+        Ambernath, Badlapur, Ulhasnagar, Kalyan & Nearby Areas
+      </p>
+
+      <p class="mb-3 text-lg">
+        📞
+        <a href="tel:+917558445431" class="text-blue-600 font-medium">
+          Call Nikhil: 7558445431
+        </a>
+      </p>
+      <p class="mb-3 text-lg">
+        💬
+        <a href="https://wa.me/917558445431" class="text-green-600 font-medium">
+          WhatsApp Chat
+        </a>
+      </p>
+
+      <div class="mt-8 text-gray-700">
+        <h4 class="font-semibold text-xl mb-4">Shop Address:</h4>
+        <p class="mb-4">
+          Shop no.: 3, Panvelkar Highway,Opp. Konark Garden Badlapur East,
+          Maharashtra, India
+        </p>
+        <div
+          class="aspect-w-16 aspect-h-9 max-w-full mx-auto rounded-lg overflow-hidden shadow-lg"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.941458896793!2d73.22535127466693!3d19.15403964951908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ecd7c751f923%3A0x242e1496d4fb36a5!2sKonark%20Gardens%2C%20Shirgaon%2C%20Badlapur%2C%20Maharashtra%20421503!5e0!3m2!1sen!2sin!4v1748943227346!5m2!1sen!2sin"
+            width="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <!-- Booking Form Section -->
+    <section
+      id="booking"
+      class="relative py-20 px-4 bg-gradient-to-br from-[#e0ecf8] via-[#f3e5f5] to-[#e0f7fa] overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"
+      ></div>
+      <h3
+        class="text-4xl font-bold text-center text-blue-800 mb-10 relative z-10"
+        data-aos="fade-up"
+      >
+        Book a Service
+      </h3>
+      <form
+        id="bookingForm"
+        enctype="multipart/form-data"
+        class="relative z-10 backdrop-blur-md bg-white/40 border border-white/30 shadow-xl rounded-3xl p-8 max-w-3xl mx-auto space-y-6"
+        data-aos="zoom-in"
+      >
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Service Needed</label
+          >
+          <select
+            name="service"
+            class="w-full px-4 py-2 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition"
+          >
+            <option>AC Repair</option>
+            <option>Washing Machine</option>
+            <option>Refrigerators</option>
+            <option>Geyser</option>
+            <option>Water Purifier</option>
+            <option>Electrical Wiring</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Describe the Issue</label
+          >
+          <textarea
+            name="description"
+            rows="3"
+            placeholder="e.g. AC not cooling properly..."
+            class="w-full px-4 py-2 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Upload a Photo (optional)</label
+          >
+          <input
+            type="file"
+            name="photo"
+            class="w-full px-4 py-2 bg-white/80 border border-gray-300 rounded-xl focus:outline-none"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Preferred Date & Time</label
+          >
+          <input
+            type="datetime-local"
+            name="preferredDate"
+            class="w-full px-4 py-2 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Your Name</label
+          >
+          <input
+            type="text"
+            name="name"
+            class="w-full px-4 py-2 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition"
+            required
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-1 text-gray-800"
+            >Phone Number</label
+          >
+          <input
+            type="tel"
+            name="phone"
+            class="w-full px-4 py-2 rounded-xl bg-white/80 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none transition"
+            required
+          />
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="mt-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:scale-105 transition transform"
+          >
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+      © 2025 NJ Electrician – All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      const form = document.getElementById("bookingForm");
+      const modal = document.getElementById("confirmationModal");
+
+      form?.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+          const res = await fetch("http://localhost:5000/api/bookings", {
+            method: "POST",
+            body: formData,
+          });
+          if (res.ok) {
+            form.reset();
+            modal.classList.remove("hidden");
+          } else {
+            alert("❌ Failed to submit booking.");
+          }
+        } catch (err) {
+          console.error("Error:", err);
+          alert("❌ Something went wrong.");
+        }
+      });
+
+      function closeModal() {
+        modal.classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
