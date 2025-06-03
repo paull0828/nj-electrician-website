@@ -2,10 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const session = require("express-session");
+
 const path = require("path");
 
-const adminRoutes = require("./routes/admin");
 const bookingRoutes = require("./routes/booking");
 
 dotenv.config();
@@ -13,18 +12,6 @@ dotenv.config();
 const app = express();
 
 // Session middleware FIRST
-app.use(
-  session({
-    secret: "secret123",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 3600000,
-      sameSite: "lax",
-      secure: false,
-    },
-  })
-);
 
 // CORS middleware AFTER session
 app.use(
@@ -43,7 +30,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.use("/api/admin", adminRoutes);
+
 app.use("/api/bookings", bookingRoutes);
 
 // MongoDB connection

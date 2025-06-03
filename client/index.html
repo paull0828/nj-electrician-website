@@ -198,41 +198,13 @@
           alt="Work 1"
           class="rounded-xl shadow-md"
         />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 2"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 3"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 4"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 5"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 6"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 7"
-          class="rounded-xl shadow-md"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Work 8"
-          class="rounded-xl shadow-md"
-        />
+        <img src="" alt="Work 2" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 3" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 4" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 5" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 6" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 7" class="rounded-xl shadow-md" />
+        <img src="" alt="Work 8" class="rounded-xl shadow-md" />
       </div>
 
       <!-- Instagram Button -->
@@ -408,7 +380,6 @@
       © 2025 NJ Electrician – All rights reserved.
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
@@ -419,14 +390,48 @@
       form?.addEventListener("submit", async function (e) {
         e.preventDefault();
         const formData = new FormData(form);
+
+        // Extract values for WhatsApp message
+        const service = formData.get("service");
+        const description = formData.get("description") || "N/A";
+        const preferredDate = formData.get("preferredDate") || "Not specified";
+        const name = formData.get("name");
+        const phone = formData.get("phone");
+
         try {
+          // First, send to backend including photo
           const res = await fetch("http://localhost:5000/api/bookings", {
             method: "POST",
             body: formData,
           });
+
           if (res.ok) {
+            const data = await res.json();
+
+            // Get photo URL if uploaded
+            const photo = data.photo
+              ? `http://localhost:5000/uploads/${data.photo}`
+              : "Not provided";
+
+            // Format WhatsApp message
+            const message = `🔧 *New Booking Request*:
+👤 Name: ${name}
+📞 Phone: ${phone}
+🛠️ Service: ${service}
+📅 Preferred Date & Time: ${preferredDate}
+📝 Issue: ${description}
+📷 Photo: ${photo}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = "7558445431"; // ← Replace with your number
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // Reset form & show modal
             form.reset();
-            modal.classList.remove("hidden");
+            modal?.classList.remove("hidden");
+
+            // Open WhatsApp
+            window.open(whatsappURL, "_blank");
           } else {
             alert("❌ Failed to submit booking.");
           }
@@ -437,7 +442,7 @@
       });
 
       function closeModal() {
-        modal.classList.add("hidden");
+        modal?.classList.add("hidden");
       }
     </script>
   </body>
