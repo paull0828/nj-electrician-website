@@ -400,17 +400,20 @@
 
         try {
           // First, send to backend including photo
-          const res = await fetch("http://localhost:5000/api/bookings", {
-            method: "POST",
-            body: formData,
-          });
+          const res = await fetch(
+            "https://nj-electrician-website.onrender.com/api/bookings",
+            {
+              method: "POST",
+              body: formData,
+            }
+          );
 
           if (res.ok) {
             const data = await res.json();
 
             // Get photo URL if uploaded
             const photo = data.photo
-              ? `http://localhost:5000/uploads/${data.photo}`
+              ? `https://nj-electrician-website.onrender.com/uploads/${data.photo}`
               : "Not provided";
 
             // Format WhatsApp message
