@@ -11,8 +11,7 @@ dotenv.config();
 
 const app = express();
 
-// Session middleware FIRST
-
+app.use(express.static("client"));
 // CORS middleware AFTER session
 app.use(
   cors({
