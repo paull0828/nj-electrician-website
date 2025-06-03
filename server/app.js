@@ -12,13 +12,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.static("client"));
-// CORS middleware AFTER session
-app.use(
-  cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500"], // When you serve HTML via express
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Built-in body parsing
 app.use(express.json());
